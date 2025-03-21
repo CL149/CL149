@@ -1,1 +1,25 @@
-
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>During the Study</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="Texts" onscroll="progressBar()" style="width: 100%;height: 100%; overflow-x: hidden;">
+            <p id="p1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac nunc nisl. Etiam suscipit dolor eget ligula gravida sollicitudin. In a malesuada massa. Quisque egestas augue neque, quis blandit ante aliquam a. Aliquam erat volutpat. Ut at nisl mi. Morbi egestas lorem et enim blandit, quis condimentum mi tincidunt. Sed tincidunt ornare justo quis dictum. Morbi dictum aliquam risus, id elementum ligula sagittis sed. Sed feugiat erat ipsum, eu pellentesque arcu feugiat sed. In sagittis elit congue dui rhoncus auctor. Vivamus at faucibus odio, non efficitur tortor. Sed non eros ac leo euismod ullamcorper sit amet et erat. Mauris orci nibh, rhoncus sit amet condimentum vel, sodales vitae elit.
+            </p>
+            <p id="p2">
+                Pellentesque placerat odio eget eros feugiat, eu convallis dolor scelerisque. Nam vestibulum massa in molestie elementum. Proin sollicitudin massa vitae sem luctus viverra at in purus. Aenean est nulla, tincidunt nec mattis ut, maximus in magna. Cras laoreet aliquet ultrices. Cras malesuada porttitor vulputate. Aliquam lorem felis, maximus eget lacinia eu, euismod vitae felis. Donec pulvinar venenatis turpis eu imperdiet. Donec eget rhoncus diam.
+            </p>
+            <br><br>
+            <button type="button" onclick="checkEligibility()">Next Page</button>
+            <div class="progress" style="position:sticky;bottom: 0;right:0;width: 100%;">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>
