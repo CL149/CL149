@@ -7,6 +7,7 @@ sign.width=window.innerWidth*0.97
 sign.height=window.innerHeight*0.8
 
 initials=document.getElementById("name")
+initialsContent=initials.value
 
 ctx.lineWidth=3;
 ctx.lineJoin=ctx.lineCap='round'
@@ -62,7 +63,7 @@ sign.addEventListener("touchend",()=>{
     image = new Image()
     image.src=sign.toDataURL('image/png')
     console.log(image)
-    console.log(new Date().toString())
+    console.log(initialsContent)
 })
 
 save=()=>{
@@ -80,15 +81,14 @@ save=()=>{
         let obj={
             base64:spt[1],
             type:spt[0],
-            name:initials+new Date().toString()
+            name:initialsContent+new Date().toString()
         }
         fetch(url,{
             method:"POST",
             body:JSON.stringify(obj)
         })
         .then(r=>r.text())
-        .then(data=>console.log(data))
-        .then(location.href="")
+        .then(data=>test(data))
     }
     else{alert("Please sign on the designated area!")}
 }
@@ -113,4 +113,16 @@ check_location=(imageData)=>{
 
 success=()=>{
     console.log(visual.length)
+}
+
+test=(data)=>{
+    {
+        if (data=="image uploaded"){
+            location.href="https://cityuhk.questionpro.com/t/Ab82mZ5n2a"
+            
+        }
+        else{
+            alert("Failed to upload image, please sign again later.")
+        }
+    }
 }
