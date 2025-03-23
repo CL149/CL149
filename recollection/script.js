@@ -62,7 +62,7 @@ sign.addEventListener("touchmove",(event)=>{
 sign.addEventListener("touchend",()=>{
     image = new Image()
     image.src=sign.toDataURL('image/png')
-    console.log(image)
+    // console.log(image)
     console.log(initialsContent)
 })
 
