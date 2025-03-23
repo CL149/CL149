@@ -87,7 +87,7 @@ save=()=>{
         })
         .then(r=>r.text())
         .then(data=>console.log(data))
-        .then(location.href="https://cityuhk.questionpro.com/t/Ab82mZ5n2a")
+        .then(data=="image uploaded"?location.href="https://cityuhk.questionpro.com/t/Ab82mZ5n2a":alert("Failed to upload image, please sign again."))
     }
     else{alert("Please sign on the designated area!")}
 }
