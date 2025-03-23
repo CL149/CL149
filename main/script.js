@@ -11,6 +11,7 @@ loadText=(data)=>{
     ]
     
     id=0
+    document.getElementById("groupNo").value=data
     for(message of passage[data]){
         words=document.createElement("p")
         words.setAttribute("id","p"+id.toString())
@@ -72,7 +73,7 @@ main=()=>{
     }
     
     checkEligibility=()=>{
-        read.length==Lengths.length? location.href="../CL149/recollection":alert("Please read the passage carefully")
+        read.length==Lengths.length? location.href="../CL149/recollection?groupNo="+document.getElementById("groupNo").value:alert("Please read the passage carefully")
     }
     
     setInterval(checkDuration,10)
