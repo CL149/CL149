@@ -76,7 +76,7 @@ save=()=>{
     visual=check_location(visual)
     console.log(visual)
     if (visual.length>20){
-        let url="https://script.google.com/macros/s/AKfycbw416H14BhOPTJdq7yI94CU90Knjz1dv2VUsj2VIS14oTM0A9_0WenvJVuewTuCyULhCw/exec"
+        let url=""
         let spt= image.src.split("base64,")
         let obj={
             base64:spt[1],
