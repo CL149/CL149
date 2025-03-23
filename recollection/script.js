@@ -45,6 +45,7 @@ sign.addEventListener("mouseup",()=>{
 
 
 sign.addEventListener("touchstart",(event)=>{
+    document.body.style.overflow="hidden"
     mouse={"x":event.changedTouches[0].pageX,"y":event.changedTouches[0].pageY}
     ctx.beginPath();
     ctx.moveTo(mouse["x"],mouse["y"])
@@ -57,6 +58,7 @@ sign.addEventListener("touchmove",(event)=>{
 })
 
 sign.addEventListener("touchend",()=>{
+    document.body.style.overflow="scroll"
     image = new Image()
     image.src=sign.toDataURL('image/png')
 })
