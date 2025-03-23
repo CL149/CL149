@@ -86,8 +86,7 @@ save=()=>{
             body:JSON.stringify(obj)
         })
         .then(r=>r.text())
-        .then(data=>console.log(data))
-        .then(location.href="https://cityuhk.questionpro.com/t/Ab82mZ5n2a")
+        .then(data=>test(data))
     }
     else{alert("Please sign on the designated area!")}
 }
@@ -112,4 +111,16 @@ check_location=(imageData)=>{
 
 success=()=>{
     console.log(visual.length)
+}
+
+test=(data)=>{
+    {
+        if (data=="image uploaded"){
+            location.href="https://cityuhk.questionpro.com/t/Ab82mZ5n2a"
+            
+        }
+        else{
+            alert("Failed to upload image, please sign again later.")
+        }
+    }
 }
