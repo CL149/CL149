@@ -7,7 +7,7 @@ sign.width=window.innerWidth*0.97
 sign.height=window.innerHeight*0.8
 
 initials=document.getElementById("name")
-initialsContent=initials.value
+initialsContent=initials
 
 ctx.lineWidth=3;
 ctx.lineJoin=ctx.lineCap='round'
