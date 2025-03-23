@@ -86,7 +86,7 @@ save=()=>{
             body:JSON.stringify(obj)
         })
         .then(r=>r.text())
-        .then(data=>data=="image uploaded"?location.href="https://cityuhk.questionpro.com/t/Ab82mZ5n2a":alert("Failed to upload image, please sign again."))
+        .then(data=>data=="image uploaded"?location.href="https://cityuhk.questionpro.com/t/Ab82mZ5n2a":alert("Failed to upload image, please sign again later."))
     }
     else{alert("Please sign on the designated area!")}
 }
