@@ -73,7 +73,7 @@ main=()=>{
     }
     
     checkEligibility=()=>{
-        read.length==Lengths.length? location.href="../CL149/recollection?groupNo="+document.getElementById("groupNo").value:alert("Please read the passage carefully")
+        read.length==Lengths.length? location.href="../recollection?groupNo="+document.getElementById("groupNo").value:alert("Please read the passage carefully")
     }
     
     setInterval(checkDuration,10)
