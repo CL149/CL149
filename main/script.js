@@ -123,7 +123,7 @@ nextSession1=(language)=>{
         selection=document.createElement("input")
         selection.setAttribute("type","checkbox")
         selection.setAttribute("id","s"+id.toString())
-        selection.setAttribute("style","margin:20px;padding:40px;transform: scale(110%);")
+        selection.setAttribute("style","margin:20px;padding:20px;transform: scale(200%);")
         div.appendChild(selection)
         words=document.createElement("span")
         words.innerHTML=message
@@ -164,7 +164,7 @@ nextSession2=()=>{
     octx=optimized.getContext("2d")
 
     sign.width=window.innerWidth*0.77
-    sign.height=window.innerHeight*0.6
+    sign.height=window.innerHeight*0.5
 
     initials=document.getElementById("name")
 
