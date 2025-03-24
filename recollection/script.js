@@ -52,7 +52,7 @@ sign.addEventListener("touchstart",(event)=>{
 })
 
 sign.addEventListener("touchmove",(event)=>{
-    mouse={"x":event.changedTouches[0].pageX,"y":event.changedTouches[0].pageY}
+    mouse={"x":event.changedTouches[0].pageX-event.target.getBoundingClientRect().x,"y":event.changedTouches[0].pageY-event.target.getBoundingClientRect().y}
     ctx.lineTo(mouse["x"],mouse["y"])
     ctx.stroke()
 })
