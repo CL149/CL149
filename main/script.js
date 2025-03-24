@@ -22,6 +22,24 @@ loadText=(data,language)=>{
         ]
     ]
     
+    reference=[
+        [
+            '(Schwartz & Bardi, 2001)',
+            '(Bardi & Schwartz, 2003)',
+            '(Grant & Mayer, 2009; Maio & Olson, 1995; Rioux & Penner, 2001; Verplanken & Holland, 2002),',
+            '(Mumford, Connelly, Helton, Van Doorn, & Osburn, 2002)',
+            '(Myyry, & Helkama, 2002)',
+            '(Sagiv & Schwartz, 1995)',
+            '(Edwards, Cable, Williamson, Lambert, & Shipp, 2006; Kristof, 1996)'
+        ],[
+            '(Caprara et al., 2006)',
+            '(Urien & Kilbourne, 2011)',
+            '(Fritzsche & Oz, 2007)'
+        ],[
+            '(Berzonsky, Cieciuch, Duriez, & Soenens, 2011)'
+        ]
+    ]
+
     id=0
     document.getElementById("groupNo").value=data
     document.getElementById("Task Start").style.display="block"
@@ -31,6 +49,14 @@ loadText=(data,language)=>{
         words.innerHTML=message
         document.getElementById("Texts").appendChild(words)
     }
+
+    refDiv=document.getElementById('ref')
+    for(refPass of reference[data]){
+        refText=document.createElement("p")
+        refText.innerHTML=refPass
+        refDiv.appendChild(refText)
+    }
+
     main(language)
 }
 
