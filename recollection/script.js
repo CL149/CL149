@@ -46,7 +46,7 @@ sign.addEventListener("mouseup",()=>{
 
 
 sign.addEventListener("touchstart",(event)=>{
-    mouse={"x":event.changedTouches[0].pageX,"y":event.changedTouches[0].pageY}
+    mouse={"x":event.changedTouches[0].pageX-event.target.getBoundingClientRect().x,"y":event.changedTouches[0].pageY-event.target.getBoundingClientRect().y}
     ctx.beginPath();
     ctx.moveTo(mouse["x"],mouse["y"])
 })
