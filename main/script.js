@@ -123,7 +123,7 @@ nextSession1=(language)=>{
         selection=document.createElement("input")
         selection.setAttribute("type","checkbox")
         selection.setAttribute("id","s"+id.toString())
-        selection.setAttribute("style","margin:20px;padding:50px;transform: scale(130%);")
+        selection.setAttribute("style","margin:20px;padding:40px;transform: scale(110%);")
         div.appendChild(selection)
         words=document.createElement("span")
         words.innerHTML=message
