@@ -11,18 +11,20 @@
             <div id="language" style="display: flex;flex-direction: column;align-items: flex-start; font-size: 30px;">
                 <h1>Which language would you prefer in completing the following tasks?</h1>
                 <div style="flex-direction: row;">
-                    <input type="checkbox" name="English" id="eng" onchange="getText(0)" style=" width:50px;transform: scale(200%);"> 
+                    <input type="radio" name="Language" id="eng" value=0 style=" width:50px;transform: scale(200%);"> 
                     English
                 </div>
                 <div style="flex-direction: row;">
-                    <input type="checkbox" name="Mandarin" id="chi" onchange="getText(1)" style=" width:50px;transform: scale(200%);"> Chinese
+                    <input type="radio" name="Language" id="chi" value=1 style=" width:50px;transform: scale(200%);"> Chinese
                 </div>
+                <br>
+                <button type="button" onclick="getText()" style="font-size: medium;">Next Session</button>
             </div>
             <div id="Task Start" style="display: none;">
                 <h1>Please read the following article carefully</h1>
                 <p style="font-size: xx-small;">*This page will be locked at least for 30 seconds to avoid any procedural error</p>
             </div>
-            <div id="Texts" style="max-width: 1600px;"></div>
+            <div id="Texts" style="max-width: 1600px; font-size: large;"></div>
             <br><br>
             <div id="nextSession" style="display: none;">
                 <p>Click next session to start the task</p>
@@ -47,6 +49,7 @@
             <div>
                 <canvas id="signature" style="border: 2px #ddd solid;"></canvas>
             </div>
+            <p style="font-size: x-small;">After submission of the signature, the website will direct you to the questionnaire</p>
             <div>
                 <button onclick="save()" style="margin-top: 10px;">Next Session</button>
                 <button onclick="del()" style="margin-top: 10px;">Clear</button>

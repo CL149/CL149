@@ -34,7 +34,14 @@ loadText=(data,language)=>{
     main(language)
 }
 
-getText=(language)=>{
+getText=()=>{
+    language=document.getElementsByName("Language")
+    for (lang of language){
+        if (lang.checked){
+            language=lang.value
+        }
+    }
+    console.log(language)
     document.getElementById("language").style.display="none"
     document.getElementById("nextSession").style.display="block"
     let url="https://script.google.com/macros/s/AKfycbwaSOcW5s2gAz1C0gCG-GrbuUvTHekoSHNQ7_9KhORoE4KF0hbexGsgw4_l4WOaMMzt/exec"
@@ -132,8 +139,8 @@ nextSession2=()=>{
     optimized=document.getElementById("optimized")
     octx=optimized.getContext("2d")
 
-    sign.width=window.innerWidth*0.97
-    sign.height=window.innerHeight*0.7
+    sign.width=window.innerWidth*0.77
+    sign.height=window.innerHeight*0.6
 
     initials=document.getElementById("name")
 
