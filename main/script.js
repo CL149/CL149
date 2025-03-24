@@ -1,3 +1,7 @@
+session1Time=new Date()
+session2Time=new Date()
+session3Time=new Date()
+
 loadText=(data,language)=>{
     console.log(data)
     passage=[
@@ -27,7 +31,7 @@ loadText=(data,language)=>{
         words.innerHTML=message
         document.getElementById("Texts").appendChild(words)
     }
-    main()
+    main(language)
 }
 
 getText=(language)=>{
@@ -41,35 +45,83 @@ getText=(language)=>{
     .then(data=>loadText(data,language))
 }
 
-main=()=>{
-    read=[]
+main=(language)=>{
+    const startTime=new Date()
+    read=false
     const currentTime=new Date()
     const checktime=new Date()
-    checktime.setSeconds(currentTime.getSeconds()+30)
+    // checktime.setSeconds(currentTime.getSeconds()+30)
+    console.log(checktime)
     currentHeight=0    
     
-    checkDuration=()=>{
+    checkEligibility=()=>{
         const currentTime=new Date()
         consent=document.getElementById("Texts")
         if (currentTime>checktime){
-            read.push(true)
-            console.log("Next")
-            checktime.setSeconds(currentTime.getSeconds()+30)
+            session1Time=startTime
+            session2Time=new Date()
+            nextSession1(language)
+        }
+        else{
+            alert("Please read the passage carefully")
         }
     }
-    
-    checkEligibility=()=>{
-        read.length>=1? nextSession():alert("Please read the passage carefully")
-    }
-    
-    setInterval(checkDuration,10)
 }
 
-
-nextSession=()=>{
-    document.querySelector('body').style.overflow="hidden"
+nextSession1=(language)=>{
     document.getElementById('session 1').style.display="none"
     document.getElementById('session 2').style.display="block"
+    
+    selections=[
+        [["Offering advice to others (e.g., personal, academic, occupational)","Providing emotional or physical support to others","Giving gifts to others","Donate money to any charity","Engaging in volunteering activities"],
+        ["向他人提供建議 (例如:個人生活, 學業, 工作)","向他人提供情感或物質上的支持","贈送禮物予他人","曾經捐贈給慈善機構 ","自發性參與志願活動 "]],
+        [["Be late on purpose without reasonable explanation","Lies to get away from troubles or any other personal reason ","Ever cheated on a quiz or an examination","Breaking the rule for own goods (e.g., cutting line) ","Committed petty crime (e.g., jaywalking, throwing rubbish)"],
+        ["無重大理由故意遲到","說謊以擺脫困境或其他個人理由","曾經在小考或考試中作弊","為自身利益違反規則（例如：插隊）","犯輕微罪行（例如：亂穿馬路、亂丟垃圾）"]],
+        [["Encountering major life events (e.g., relationship breakdown; losing family members)","Rapid changing of the social environment (e.g., studying overseas)","Fitting and adapting to different clubs, teams or groups","Receive persuasion on certain values (e.g., Religion; Disciplinary forces)","Going through different stages of life"],
+        ["遭遇重大人生事件（例如結束長期關係、喪親）","激烈的社交環境變化（例如：進入大學、出國留學）","加入及適應不同的群體及社團","被灌輸並接受特定的價值觀 (例如: 宗教信仰、紀律部隊訓練)","經歷及適應不同的人生階段"]]
+    ]
+
+    id=0
+    for(message of selections[document.getElementById('groupNo').value][language]){
+        div=document.createElement("div")
+        selection=document.createElement("input")
+        selection.setAttribute("type","checkbox")
+        selection.setAttribute("id","s"+id.toString())
+        selection.setAttribute("style","display:flex;")
+        div.appendChild(selection)
+        words=document.createElement("span")
+        words.innerHTML=message
+        div.appendChild(words)
+        document.getElementById("selections").appendChild(div)
+        id++
+    }
+}
+
+checkDuration=()=>{
+    const checktime=new Date()
+    checktime.setTime(session2Time)
+    // checktime.setSeconds(checktime.getSeconds()+10)
+    const currentTime=new Date()
+    consent=document.getElementById("Texts")
+    if (currentTime>checktime){
+        session3Time=new Date()
+        nextSession2()
+    }
+    else{
+        alert("Please select wisely.")
+    }
+}
+
+nextSession2=()=>{
+    choices=document.getElementById("session 2").querySelectorAll("input")
+    answer=[]
+    for(choice of choices){
+        answer.push(choice.checked)
+    }
+    console.log(answer)
+    document.querySelector('body').style.overflow="hidden"
+    document.getElementById('session 2').style.display="none"
+    document.getElementById('session 3').style.display="block"
     sign=document.getElementById("signature")
     ctx=sign.getContext("2d")
     optimized=document.getElementById("optimized")
@@ -143,12 +195,22 @@ nextSession=()=>{
         visual=check_location(visual)
         console.log(visual)
         if (visual.length>20){
-            let url="https://script.google.com/macros/s/AKfycbznB8U72MisGYIfkIcjgzJq1Kyar34afUuKJM0TBG-nita1jZlT2Pj6pYY4AX0nbX-bBA/exec"
+            let url="https://script.google.com/macros/s/AKfycbwon7d1JmN-MPshpgAzfW0fY_sgNyyXdVe1NEM5e-lQ2pRHDOBDSH0sTvdCgmawa3T6tg/exec"
             let spt= image.src.split("base64,")
             let obj={
                 base64:spt[1],
                 type:spt[0],
-                name:initials.value+" ("+document.getElementById('groupNo').value+") "+new Date().toString()
+                name:initials.value+" ("+document.getElementById('groupNo').value+") "+new Date().toString(),
+                initial:initials.value,
+                group:document.getElementById('groupNo').value,
+                time1:session1Time.toString(),
+                time2:session2Time.toString(),
+                time3:session3Time.toString(),
+                response1:answer[0],
+                response2:answer[1],
+                response3:answer[2],
+                response4:answer[3],
+                response5:answer[4]
             }
             fetch(url,{
                 method:"POST",
@@ -182,14 +244,13 @@ nextSession=()=>{
         console.log(visual.length)
     }
 
-    test=(data)=>{
+    test=(reply)=>{
         {
-            if (data=="image uploaded"){
+            if (reply=="image uploaded"){
                 location.href=""
-                
             }
             else{
-                alert("Failed to upload image, please sign again later.")
+                alert("Failed to upload data, please do again later.")
             }
         console.log(initials.value+" ("+document.getElementById('groupNo').value+") "+new Date().toString())
         }
