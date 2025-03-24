@@ -24,7 +24,7 @@ loadText=(data,language)=>{
     
     id=0
     document.getElementById("groupNo").value=data
-    document.querySelector("h1").style.display="flex"
+    document.getElementById("Task Start").style.display="block"
     for(message of passage[data][language]){
         words=document.createElement("p")
         words.setAttribute("id","p"+id.toString())
@@ -50,7 +50,7 @@ main=(language)=>{
     read=false
     const currentTime=new Date()
     const checktime=new Date()
-    checktime.setSeconds(currentTime.getSeconds()+30)
+    // checktime.setSeconds(currentTime.getSeconds()+30)
     console.log(checktime)
     currentHeight=0    
     
@@ -87,7 +87,7 @@ nextSession1=(language)=>{
         selection=document.createElement("input")
         selection.setAttribute("type","checkbox")
         selection.setAttribute("id","s"+id.toString())
-        selection.setAttribute("style","display:flex;")
+        selection.setAttribute("style","margin:20px;padding:50%;transform: scale(200%);")
         div.appendChild(selection)
         words=document.createElement("span")
         words.innerHTML=message
@@ -100,7 +100,7 @@ nextSession1=(language)=>{
 checkDuration=()=>{
     const checktime=new Date()
     checktime.setTime(session2Time)
-    checktime.setSeconds(checktime.getSeconds()+10)
+    // checktime.setSeconds(checktime.getSeconds()+10)
     const currentTime=new Date()
     consent=document.getElementById("Texts")
     if (currentTime>checktime){
