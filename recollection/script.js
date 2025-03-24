@@ -4,7 +4,7 @@ optimized=document.getElementById("optimized")
 octx=optimized.getContext("2d")
 
 sign.width=window.innerWidth*0.97
-sign.height=window.innerHeight*0.8
+sign.height=window.innerHeight*0.7
 
 initials=document.getElementById("name")
 
@@ -15,6 +15,7 @@ ctx.strokeStyle='#ddd'
 visual=ctx.createImageData(sign.width,sign.height)
 
 stats=false
+document.getElementById('groupNo').value=new URLSearchParams(window.location.search).get('groupNo')
 
 del=()=>{
     ctx.clearRect(0,0,sign.width,sign.height)
@@ -71,12 +72,12 @@ save=()=>{
     visual=check_location(visual)
     console.log(visual)
     if (visual.length>20){
-        let url=""
+        let url="https://script.google.com/macros/s/AKfycbznB8U72MisGYIfkIcjgzJq1Kyar34afUuKJM0TBG-nita1jZlT2Pj6pYY4AX0nbX-bBA/exec"
         let spt= image.src.split("base64,")
         let obj={
             base64:spt[1],
             type:spt[0],
-            name:initials.value+new Date().toString()
+            name:initials.value+" ("+document.getElementById('groupNo').value+") "+new Date().toString()
         }
         fetch(url,{
             method:"POST",
@@ -119,5 +120,6 @@ test=(data)=>{
         else{
             alert("Failed to upload image, please sign again later.")
         }
+    console.log(initials.value+" ("+document.getElementById('groupNo').value+") "+new Date().toString())
     }
 }
