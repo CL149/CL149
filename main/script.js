@@ -80,6 +80,11 @@ nextSession1=(language)=>{
         [["Encountering major life events (e.g., relationship breakdown; losing family members)","Rapid changing of the social environment (e.g., studying overseas)","Fitting and adapting to different clubs, teams or groups","Receive persuasion on certain values (e.g., Religion; Disciplinary forces)","Going through different stages of life"],
         ["遭遇重大人生事件（例如結束長期關係、喪親）","激烈的社交環境變化（例如：進入大學、出國留學）","加入及適應不同的群體及社團","被灌輸並接受特定的價值觀 (例如: 宗教信仰、紀律部隊訓練)","經歷及適應不同的人生階段"]]
     ]
+    
+    HLang=['Please try to recollect your memory and select the scenario you experienced in the past','試回想你過去的經歷, 並從以下的選項中選取曾經在你生活中發生過的情景']
+    taskHeading= document.createElement("h1")
+    taskHeading.innerHTML=HLang[language]
+    document.getElementById('taskHeading').appendChild(taskHeading)
 
     id=0
     for(message of selections[document.getElementById('groupNo').value][language]){
