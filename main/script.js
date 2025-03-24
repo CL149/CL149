@@ -24,19 +24,17 @@ loadText=(data,language)=>{
     
     reference=[
         [
-            '(Schwartz & Bardi, 2001)',
-            '(Bardi & Schwartz, 2003)',
-            '(Grant & Mayer, 2009; Maio & Olson, 1995; Rioux & Penner, 2001; Verplanken & Holland, 2002),',
-            '(Mumford, Connelly, Helton, Van Doorn, & Osburn, 2002)',
-            '(Myyry, & Helkama, 2002)',
-            '(Sagiv & Schwartz, 1995)',
-            '(Edwards, Cable, Williamson, Lambert, & Shipp, 2006; Kristof, 1996)'
+            'Edwards, J. R., Cable, D. M., Williamson, I. O., Lambert, L. S., & Shipp, A. J. (2006). The phenomenology of fit: Linking the person and environment to the subjective experience of person-environment fit. Journal of Applied Psychology, 91, 802–827. ',
+            'Grant, A. M. (2007). Relational job design and the motivation to make a prosocial difference. Academy of Management Review, 32, 393–417. ',
+            'Schwartz, S. H., & Bardi, A. (2001). Value hierarchies across cultures: Taking a similarities perspective. Journal of Cross-Cultural Psychology, 32, 268–290. '
         ],[
-            '(Caprara et al., 2006)',
-            '(Urien & Kilbourne, 2011)',
-            '(Fritzsche & Oz, 2007)'
+            "Aelenei, C., Jury, M., Darnon, C., Sicard, A., Maggio, S., & Martinot, D. (2023). Self-enhancement values and academic achievement: An interaction with students' parental level of education and gender?. The British journal of educational psychology, 93(2), 626–640. https://doi.org/10.1111/bjep.12571  ",
+            "Caprara, G. V., Schwartz, S., Capanna, C., Vecchione, M., & Barbaranelli, C. (2006). Personality and politics: Values, traits, and political choice. Political Psychology, 27(1), 1–28. https://doi.org/10.1111/j.1467-9221.2006.00457.x ",
+            "Urien, B., & Kilbourne, W. (2011). Understanding the acceptance of mobile SMS advertising among young Chinese consumers. ",
+            "Psychology & Marketing, 28(1), 69–90. https://doi.org/10.1002/mar.20381 "
         ],[
-            '(Berzonsky, Cieciuch, Duriez, & Soenens, 2011)'
+            "Bardi, A., & Goodwin, R. (2011). The Dual Route to Value Change: Individual Processes and Cultural Moderators. Journal of Cross-Cultural Psychology, 42(2), 271-287. https://doi.org/10.1177/0022022110396916 (Original work published 2011) ",
+            "Berzonsky, M. D., Cieciuch, J., Duriez, B., & Soenens, B. (2011). The how and what of identity formation: Associations between identity styles and value orientations. Personality and Individual Difference "
         ]
     ]
 
