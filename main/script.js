@@ -85,7 +85,7 @@ main=(language)=>{
     read=false
     const currentTime=new Date()
     const checktime=new Date()
-    // checktime.setSeconds(currentTime.getSeconds()+30)
+    checktime.setSeconds(currentTime.getSeconds()+30)
     console.log(checktime)
     currentHeight=0    
     
@@ -140,7 +140,7 @@ nextSession1=(language)=>{
 checkDuration=()=>{
     const checktime=new Date()
     checktime.setTime(session2Time)
-    // checktime.setSeconds(checktime.getSeconds()+10)
+    checktime.setSeconds(checktime.getSeconds()+10)
     const currentTime=new Date()
     consent=document.getElementById("Texts")
     if (currentTime>checktime){
