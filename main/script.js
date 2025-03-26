@@ -113,7 +113,7 @@ nextSession1=(language)=>{
         [["Be late on purpose without reasonable explanation","Lies to get away from troubles or any other personal reason ","Ever cheated on a quiz or an examination","Breaking the rule for own goods (e.g., cutting line) ","Committed petty crime (e.g., jaywalking, throwing rubbish)"],
         ["無重大理由故意遲到","說謊以擺脫困境或其他個人理由","曾經在小考或考試中作弊","為自身利益違反規則（例如：插隊）","犯輕微罪行（例如：亂穿馬路、亂丟垃圾）"]],
         [["Encountering major life events (e.g., relationship breakdown; losing family members)","Rapid changing of the social environment (e.g., studying overseas)","Fitting and adapting to different clubs, teams or groups","Receive persuasion on certain values (e.g., Religion; Disciplinary forces)","Going through different stages of life"],
-        ["遭遇重大人生事件（例如結束長期關係、喪親）","激烈的社交環境變化（例如：進入大學、出國留學）","加入及適應不同的群體及社團","被灌輸並接受特定的價值觀 (例如: 宗教信仰、紀律部隊訓練)","經歷及適應不同的人生階段"]]
+        ["遭遇重大人生事件（例如結束長期關係、喪親）","急遽的社交環境轉變（例如：進入大學、出國留學）","加入及適應不同的群體及社團","被灌輸並接受特定的價值觀 (例如: 宗教信仰、紀律部隊訓練)","經歷及適應不同的人生階段"]]
     ]
     
     HLang=['Please try to recollect your memory and select the scenario you experienced in the past','試回想你過去的經歷, 並從以下的選項中選取曾經在你生活中發生過的情景']
