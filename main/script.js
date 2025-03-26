@@ -39,7 +39,11 @@ loadText=(data,language)=>{
     ]
 
     id=0
+
+    title=["Please read the following article carefully","請仔細閱讀以下文章"]
+
     document.getElementById("groupNo").value=data
+    document.getElementById("Read").innerHTML= title[language]
     document.getElementById("Task Start").style.display="block"
     for(message of passage[data][language]){
         words=document.createElement("p")
