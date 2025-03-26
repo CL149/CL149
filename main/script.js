@@ -283,7 +283,7 @@ nextSession2=()=>{
     test=(reply)=>{
         {
             if (reply=="image uploaded"){
-                location.href=""
+                location.href="https://cityuhk.questionpro.com/t/Ab82mZ5tYL"
             }
             else{
                 alert("Failed to upload data, please do again later.")
