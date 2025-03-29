@@ -168,7 +168,7 @@ nextSession2=()=>{
     octx=optimized.getContext("2d")
 
     sign.width=window.innerWidth*0.77
-    sign.height=window.innerHeight*0.5
+    sign.height=window.innerHeight*0.4
 
     initials=document.getElementById("name")
 
